@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Usuarios del Sistema</h1>
+        <div class="mostrar">
+            <p>Mostrando</p>
+            <select name="cantidad">
+                <option selected>10</option>
+                <option>5</option>
+            </select>
+            <p>registros</p>
+        </div>
+        <div class="buscador">
+            <p>Buscar</p>
+            <input type="text" name="valor" class="form-control">
+        </div>
+        <table class="table table-bordered table-striped" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Sector</th>
+                    <th>Ultimo Ingreso</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lista of listado">
+                    <td>{{lista["ID"]}}</td>
+                    <td>{{lista["Usuario"]}}</td>
+                    <td>{{lista["Sector"]}}</td>
+                    <td>{{lista["UC"]}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                        <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
+                        <app-borrar ID="{{lista['ID']}}"></app-borrar>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Mostrando del 1 al 5 de un total de 5 registros</p>
+        <div class="pagina">
+            <button type="button" class="btn btn-light">Anterior</button>
+            <button type="button" class="btn btn-info">1</button>
+            <button type="button" class="btn btn-light">Siguiente</button>
+        </div>
+        <button type="button" class="btn btn-info">Agregar Usuario</button>
+    </div>
+</body>
+</html>
