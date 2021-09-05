@@ -1,0 +1,15 @@
+h1{
+  color: blue;
+}
+.mostrar{
+  display: flex;
+  float: left;
+}
+.buscador{
+  display: flex;
+  float: right;
+}
+.pagina{
+  display: flex;
+  float: right;
+}
