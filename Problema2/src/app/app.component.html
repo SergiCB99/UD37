@@ -1,0 +1,14 @@
+<h1>Formulario Contacto</h1>
+<p>Nombre<input type="text" [(ngModel)]="nombre_usuario"></p>
+<p>Email<input type="text" [(ngModel)]="email_usuario"></p>
+<p>Mensaje<input type="text" [(ngModel)]="mensaje_usuario"></p>
+<p>2+3=?<input type="text"></p>
+<button (click)="guardar()">Guardar</button>
+<hr>
+<table>
+  <tr *ngFor="let lista of listado">
+    <td><app-lista valor="{{lista['Nombre']}}"></app-lista></td>
+    <td><app-lista valor="{{lista['Email']}}"></app-lista></td>
+    <td><app-lista valor="{{lista['Mensaje']}}"></app-lista></td>
+  </tr>
+</table>
