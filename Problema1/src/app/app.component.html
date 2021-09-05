@@ -1,0 +1,19 @@
+<h1>Alta Usuario</h1>
+<p>Nombre<input type="text" [(ngModel)]="nombre_usuario"></p>
+<p>CIF<input type="text" [(ngModel)]="CIF_usuario"></p>
+<p>Direccion<input type="text" [(ngModel)]="direccion_usuario"></p>
+<p>Grupo<select name="grupo" id="grupo" [(ngModel)]="grupo_usuario">
+          <option value="grupo1">Grupo 1</option>
+          <option value="grupo2">Grupo 2</option>
+        </select>
+</p>
+<button (click)="guardar()">Guardar</button>
+<h1>Listado Clientes</h1>
+<table>
+  <tr *ngFor="let lista of listado">
+    <td><app-lista valor="{{lista['Nombre']}}"></app-lista></td>
+    <td><app-lista valor="{{lista['CIF']}}"></app-lista></td>
+    <td><app-lista valor="{{lista['Direccion']}}"></app-lista></td>
+    <td><app-lista valor="{{lista['Grupo']}}"></app-lista></td>
+  </tr>
+</table>
